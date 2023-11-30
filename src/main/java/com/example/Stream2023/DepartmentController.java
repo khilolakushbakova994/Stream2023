@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 public class DepartmentController {
-    private final DepartmentServiceImpl departmentService;
+    private final DepartmentService departmentService;
 
     public DepartmentController(DepartmentServiceImpl departmentService) {this.departmentService = departmentService;}
 

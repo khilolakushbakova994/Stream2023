@@ -3,7 +3,8 @@ package com.example.Stream2023;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
-import static org.apache.tomcat.util.http.parser.HttpParser.isAlpha;
+import static org.apache.commons.lang3.StringUtils.isAlpha;
+
 
 @Service
 
@@ -52,13 +53,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Collection<Employee> showAllEmployeeList() {
+    public List<Employee> showAllEmployeeList() {
 
-        return Collections.unmodifiableCollection(employees.values());
+        return Collections.unmodifiableList(employees.values().stream().toList());
     }
 
     private boolean checkName(String firstName, String lastName) {
-        return  isAlpha(firstName) && isAlpha(lastName);
+       return  isAlpha(firstName) && isAlpha(lastName);
 
     }
 
